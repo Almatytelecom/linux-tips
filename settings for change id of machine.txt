@@ -1,0 +1,11 @@
+
+conf file:
+
+/etc/machine-id
+
+
+
+if you want change the machine-id number you may do following:
+
+sudo truncate -s 0 /etc/machine-id		// this is clear machine-id file
+sudo systemd-machine-id-setup			// this is setup new id 

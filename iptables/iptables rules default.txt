@@ -1,0 +1,21 @@
+
+this settings for iptables for default settings in most decisions
+
+
+sudo iptables -P INPUT DROP								//set DROP for all chain
+sudo iptables -P OUTPUT DROP
+sudo iptables -P FORWARD DROP
+
+
+sudo iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT		//ACCEPT relative with init connections
+sudo iptables -A OUTPUT -m conntrack --ctstate NEW,RELATED,ESTABLISHED -j ACCEPT	//ACCEPT new connections from inside servers	
+
+sudo iptables -A INPUT -i lo -j ACCEPT							//for normal working name resolv
+sudo iptables -A OUTPUT -i lo -j ACCEPT
+
+//sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j ACCEPT
+
+sudo iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT			//for pings
+sudo iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+sudo iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
+sudo iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT

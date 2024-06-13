@@ -1,0 +1,15 @@
+
+if you have on server 2 interfaces you may do:
+
+
+conf file 
+/etc/netplan/50-cloud-init.yaml
+
+network:
+	ehternets:
+		enp0s3:
+			dhcp4: true
+		enp0s8:
+			addresses:
+				- 192.168.50.1/24
+	version: 2

@@ -1,0 +1,38 @@
+git config --global --get user.name
+git config --global --get user.email
+
+
+git config --global user.name "valdemar"
+git config --global user.email "almatytelecom@gmail.com"
+
+mkdir repos
+
+ssh-keygen -t rsa -b 4096 -C "almatytelecom@gmail.com"	//generate keys - github and\
+github.pub
+
+create repo in github.com
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github
+
+mkdir passwords
+cd passwords
+
+git config --local --get user.name
+git config --local --get user.email
+
+git config --local user.name asyl
+git config --local user.email kazarchive@gmail.com
+
+git clone git@github.com:Almatytelecom/passwords.git
+git status
+
+touch file1example
+git add .
+git commit -m "adding file1example to repo passwords"
+
+git remote -v
+git push -u origin main
+
+
+

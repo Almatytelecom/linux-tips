@@ -1,0 +1,16 @@
+
+sudo apt-get install openssh-server	//install openssh
+which sshd				//is it installed or not
+sudo systemctl status ssh		//does ssh service work or not
+
+ssh-keygen -t rsa			//generate private and public key
+eval "$(ssh-agent -s)"			//run ssh-agent
+ssh-add ~/.ssh/private			//добавление ключа private
+ssh-add -l				//просмотр добавленых ключей
+ssh-copy-id valdemar@192.168.50.10	//добавление на уд. сервер публ.ключа
+
+ssh valdemar@192.168.50.10		//доступ на удаленный сервер
+
+scp valdemar@192.168.50.10:/home\
+/valdemar/mycertasyl/client.csr\
+ /home/valdemar				//копирование с удаленного сервера 

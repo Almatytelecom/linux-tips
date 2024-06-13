@@ -1,0 +1,14 @@
+
+for save rules in iptables 
+
+install iptables persistent
+
+
+iptables conf file:
+/etc/iptables/rules.v4						//this conf file iptables-persistent use for load rules in loading process where startint os
+
+
+sudo iptables-save > iptables_backup.rules			//saving in home directory with local rights
+sudo sh -c "sudo iptables-save > /etc/iptables/rules.v4"	//saving in /etc/iptables with high rights
+
+sudo iptables-restore < iptables_backup.rules			//restoring rules from local file

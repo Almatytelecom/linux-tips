@@ -1,0 +1,20 @@
+settings -> Shared Folders -> + -> choose Folder Path in host ->
+choose Folder Name which appear in virtual -> set Auto-mount, Make Permament
+
+settings -> install guest additions in virtual cdrom in menu of window in tab device 
+
+
+sudo mkdir -p /media/cdrom			//create directory cdrom
+sudo mount /dev/cdrom /media/cdrom		//mount device on /media/cdrom
+cd /media/cdrom					//go to /media/cdrom
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install bzip2			//install compressor bzip2
+sudo sh VBoxLinuxAdditions.run			//start VBoxLinuxAdditions.run
+sudo shutdown -r now 				//restart system
+sudo usermod -aG vboxsf $(whoami)		//add my user to group vboxsf
+sudo shutdown -r now
+
+
+
+

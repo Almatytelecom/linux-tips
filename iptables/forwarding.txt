@@ -1,0 +1,26 @@
+
+for enable forwarding need following
+
+
+sudo sysctl -w net.ipv4.ip_forward=1				// temporary enabling this rule until reboot
+
+
+
+For persistent you need change conf file:
+
+/etc/sysctl.conf
+net.ipv4.ip_forward=1						// persistent enabling this rule after reboot
+
+
+
+sudo sysctl -p 							//allow enabling this rule without reboot 
+
+
+
+sudo iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE	//enable NAT for ip from DHCP
+
+sudo iptables -A FORWARD -i enp0s3 -o enp0s8 -m conntrack
+--ctstate RELATED,ESTABLISHED -j ACCEPT				//enable only for packets that RELATED and ESTABLISHED, from outside to inside 
+
+
+sudo iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT		//enable for all packet, from inside to outside
