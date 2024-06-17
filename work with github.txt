@@ -7,6 +7,8 @@ git config --global user.email "almatytelecom@gmail.com"
 
 mkdir repos
 
+cd ~/.ssh
+
 ssh-keygen -t rsa -b 4096 -C "almatytelecom@gmail.com"	//generate keys - github and\
 github.pub
 
@@ -14,9 +16,14 @@ create repo in github.com
 
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github
+ssh-add -l
 
-mkdir passwords
-cd passwords
+cd ~/repos
+
+git clone git@github.com:Almatytelecom/passwords.git
+(git clone https://github.com/Almatytelecom/passwords.git)	//for no authentification
+cd ~/repos/passwords
+git status
 
 git config --local --get user.name
 git config --local --get user.email
@@ -24,8 +31,7 @@ git config --local --get user.email
 git config --local user.name asyl
 git config --local user.email kazarchive@gmail.com
 
-git clone git@github.com:Almatytelecom/passwords.git
-git status
+
 
 touch file1example
 git add .
