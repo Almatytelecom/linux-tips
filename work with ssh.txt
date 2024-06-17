@@ -5,12 +5,12 @@ sudo systemctl status ssh		//does ssh service work or not
 
 ssh-keygen -t rsa			//generate private and public key
 eval "$(ssh-agent -s)"			//run ssh-agent
-ssh-add ~/.ssh/private			//добавление ключа private
-ssh-add -l				//просмотр добавленых ключей
-ssh-copy-id valdemar@192.168.50.10	//добавление на уд. сервер публ.ключа
+ssh-add ~/.ssh/private			//add private key to agent
+ssh-add -l				//list and view keys in the agent
+ssh-copy-id valdemar@192.168.50.10	//add my public key on server in the internet
 
-ssh valdemar@192.168.50.10		//доступ на удаленный сервер
+ssh valdemar@192.168.50.10		//link to server in the internet
 
 scp valdemar@192.168.50.10:/home\
 /valdemar/mycertasyl/client.csr\
- /home/valdemar				//копирование с удаленного сервера 
+ /home/valdemar				//copy various data from server in the internet
