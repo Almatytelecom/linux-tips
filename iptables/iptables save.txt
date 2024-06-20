@@ -1,7 +1,7 @@
 
 for save rules in iptables 
 
-install iptables persistent
+install iptables-persistent
 
 
 iptables conf file:

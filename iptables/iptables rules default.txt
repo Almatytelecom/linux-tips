@@ -11,7 +11,7 @@ sudo iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT		//A
 sudo iptables -A OUTPUT -m conntrack --ctstate NEW,RELATED,ESTABLISHED -j ACCEPT	//ACCEPT new connections from inside servers	
 
 sudo iptables -A INPUT -i lo -j ACCEPT							//for normal working name resolv
-sudo iptables -A OUTPUT -i lo -j ACCEPT
+sudo iptables -A OUTPUT -o lo -j ACCEPT
 
 //sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j ACCEPT
 
