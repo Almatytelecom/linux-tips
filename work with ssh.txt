@@ -9,8 +9,12 @@ ssh-add ~/.ssh/private			//add private key to agent
 ssh-add -l				//list and view keys in the agent
 ssh-copy-id valdemar@192.168.50.10	//add my public key on server in the internet
 
+sudo iptables -A INPUT -p tcp\		//open 22 port for remote server
+ --dport 22 -m conntrack\
+ --ststate NEW -j ACCEPT
 ssh valdemar@192.168.50.10		//link to server in the internet
 
 scp valdemar@192.168.50.10:/home\
 /valdemar/mycertasyl/client.csr\
  /home/valdemar				//copy various data from server in the internet
+scp ~/test valdemar@192.168.50.10:~/	//copy various date from local machine to the server
