@@ -17,9 +17,8 @@ gpg --delete-key 'asyl'
 gpg --delete-key 'asyl@asyl.tv'
 
 
-gpg --export -a 'asyl@asyl.tv' > public-key.gpg
-gpg --export-secret-keys -a 'asyl@asyl.tv' > private-key.gpg
+gpg --export -a 'asyl@asyl.tv' > public-key.asc
+gpg --export-secret-keys -a 'asyl@asyl.tv' > private-key.asc
 
 gpg --import /path/to/public_key.asc					//import other keys
 gpg --import /path/to/private_key.asc
-
