@@ -18,7 +18,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github
 ssh-add -l
 
-cd ~/repos
+cd ~/reposadd
 
 git clone git@github.com:Almatytelecom/passwords.git
 (git clone https://github.com/Almatytelecom/passwords.git)	//for no authentification
@@ -45,6 +45,6 @@ git status							//shows the status of local repo relative to remote
 git log origin/main..main					//shows commits that are in your local but are miss. in remote
 git diff origin/main						//show difference between local and remote 
 git rev-parse origin/main					//show hash of remote commit
-git rev-pares main						//show hash of local 
+git rev-parse main						//show hash of local 
 
 
