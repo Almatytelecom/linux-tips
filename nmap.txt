@@ -1,10 +1,11 @@
 
-nmap -sV --script vuln -oA scan_result xxx.xxx.xxx.xxx	//сканирование со скриптами 
+nmap -sV --script vuln -oA scan_result xxx.xxx.xxx.xxx		//сканирование со скриптами
 
+nmap -sV -Pn --script vuln -oA scan_result xxx.xxx.xxx.xxx	//сканирование без проверки ip
 
-nmap -A -e eth0 192.168.1.0/24			//агрессивное сканирование
+nmap -A -e eth0 192.168.1.0/24					//агрессивное сканирование
 
-nmap -sV -e eth0 192.168.1.0/24 		//сканирование с опрделением версий служб
+nmap -sV -e eth0 192.168.1.0/24 				//сканирование с опрделением версий служб
 
-nmap -sn -e eth0 192.168.1.0/24 		//быстрое сканирование ping scan
+nmap -sn -e eth0 192.168.1.0/24 				//быстрое сканирование ping scan
 
