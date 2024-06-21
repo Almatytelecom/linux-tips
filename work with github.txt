@@ -32,7 +32,6 @@ git config --local user.name asyl
 git config --local user.email kazarchive@gmail.com
 
 
-
 touch file1example
 git add .
 git commit -m "adding file1example to repo passwords"
@@ -40,5 +39,12 @@ git commit -m "adding file1example to repo passwords"
 git remote -v
 git push -u origin main
 
+
+git fetch origin 						//update info about remote repository
+git status							//shows the status of local repo relative to remote
+git log origin/main..main					//shows commits that are in your local but are miss. in remote
+git diff origin/main						//show difference between local and remote 
+git rev-parse origin/main					//show hash of remote commit
+git rev-pares main						//show hash of local 
 
 
