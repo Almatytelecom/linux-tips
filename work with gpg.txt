@@ -2,11 +2,24 @@
 gpg --version
 
 
-gpg --symmetric --cipher-algo AES256 yourfile		//encrypt the yourfile
-gpg --output yourfile	--decrypt yourfile.gpg		//decrypt the yourfile.gpg
+gpg --symmetric --cipher-algo AES256 yourfile				//encrypt the yourfile
+gpg --output yourfile	--decrypt yourfile.gpg				//decrypt the yourfile.gpg
 
-gpg --full-generate-key					//generate pair of keys
 
-gpg --import /path/to/public_key.asc				//import other keys
+gpg --full-generate-key							//generate pair of keys
+
+
+gpg --list-keys								//list of public keys
+gpg --list-secret-keys							//list of secret keys
+gpg --delete-secret-key 'asyl'
+gpg --delete-secret-key 'asyl@asyl.tv'
+gpg --delete-key 'asyl'
+gpg --delete-key 'asyl@asyl.tv'
+
+
+gpg --export -a 'asyl@asyl.tv' > public-key.gpg
+gpg --export-secret-keys -a 'asyl@asyl.tv' > private-key.gpg
+
+gpg --import /path/to/public_key.asc					//import other keys
 gpg --import /path/to/private_key.asc
 
