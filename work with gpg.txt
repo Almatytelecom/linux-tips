@@ -6,3 +6,7 @@ gpg --symmetric --cipher-algo AES256 yourfile		//encrypt the yourfile
 gpg --output yourfile	--decrypt yourfile.gpg		//decrypt the yourfile.gpg
 
 gpg --full-generate-key					//generate pair of keys
+
+gpg --import /path/to/public_key.asc				//import other keys
+gpg --import /path/to/private_key.asc
+
