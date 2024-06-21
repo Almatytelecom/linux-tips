@@ -1,0 +1,8 @@
+
+gpg --version
+
+
+gpg --symmetric --cipher-algo AES256 yourfile		//encrypt the yourfile
+gpg --output yourfile	--decrypt yourfile.gpg		//decrypt the yourfile.gpg
+
+gpg --full-generate-key					//generate pair of keys
