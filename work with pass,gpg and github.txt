@@ -15,9 +15,9 @@ pass init "your gpg key ID"					//initialization pass
 
 
 cd ~/.password-store
-git init
+git init							//git init
 git remote add origin\\
- git@github.com:Almatytelecom@gmail.com/.password-store.git	//init git 
+ git@github.com:Almatytelecom@gmail.com/.password-store.git	//add remote for local 
 
 
 git clone git@github.com:Almatytelecom/.password-store.git	//clone git
