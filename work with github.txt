@@ -35,6 +35,8 @@ git config --local user.email kazarchive@gmail.com
 
 touch file1example
 git add .
+git rm filename							//in case deleting file
+git add -u .
 git commit -m "adding file1example to repo passwords"
 
 git remote -v

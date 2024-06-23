@@ -15,9 +15,9 @@ pass init "your gpg key ID"					//initialization pass
 
 
 cd ~/.password-store
-git init							//git init
+git init							//init git 
 git remote add origin\\
- git@github.com:Almatytelecom@gmail.com/.password-store.git	//add remote for local 
+ git@github.com:Almatytelecom@gmail.com/.password-store.git	
 
 
 git clone git@github.com:Almatytelecom/.password-store.git	//clone git
@@ -35,6 +35,9 @@ pass edit foldername/mypassword					//editing the mypassword
 
 cd ~/.password-store						//work with remote repos
 git add .
+or 
+git rm filename
+git add -u .
 git commit -m "adding commit"
 git push origin main	
 git status
