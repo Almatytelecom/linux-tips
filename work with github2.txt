@@ -1,0 +1,13 @@
+If your account in github is Namegithub first create new remote repo in github. 
+For example remoterepo
+https://github.com/Namegithub/remoterepo.git
+
+
+Then create local repo:
+mkdir mylocalrepo
+git init
+
+
+git remote add origin https://github.com/Namegithub/remoterepo.git	//set remote git
+git remote -v								//check remote git
+git pull origin main							//download remote git in local
