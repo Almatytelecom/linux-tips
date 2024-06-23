@@ -23,7 +23,8 @@ cd ~/reposadd
 git clone git@github.com:Almatytelecom/passwords.git
 (git clone https://github.com/Almatytelecom/passwords.git)	//for no authentification
 cd ~/repos/passwords
-git status
+git status							//pay attention on the name of branch
+git branch
 
 git config --local --get user.name
 git config --local --get user.email
