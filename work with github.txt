@@ -25,6 +25,7 @@ git clone git@github.com:Almatytelecom/passwords.git
 cd ~/repos/passwords
 git status							//pay attention on the name of branch
 git branch
+git branch -u old_name new_name					//change name of bracnh
 
 git config --local --get user.name
 git config --local --get user.email

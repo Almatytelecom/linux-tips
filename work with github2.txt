@@ -10,6 +10,7 @@ git init
 
 git status
 git branch								//pay attention on the name branch
+git branch -m old_name new_name						//change name of branch
 git remote add origin https://github.com/Namegithub/remoterepo.git	//set remote git
 git remote -v								//check remote git
 git pull origin main (or git pull origin master)							//download remote git in local
