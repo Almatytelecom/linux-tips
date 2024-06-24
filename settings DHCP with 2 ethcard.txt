@@ -12,8 +12,8 @@ subnet 192.168.50.0 netmask 255.255.255.0 {
 	option routers 192.168.50.1;
 	option domain-name-servers 8.8.8.8, 8.8.4.4;
 }
-
-
+		
+sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf				//check settings
 
 if you want the dhcp server to work only on a definitly interface(for example enp0s8), you need the following:
 conf file:
@@ -22,3 +22,5 @@ conf file:
 INTERFACESv4="enp0s8"
 
 
+sudo systemctl status isc-dhcp-server
+sudo systemctl restart isc-dhcp-server
