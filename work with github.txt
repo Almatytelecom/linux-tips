@@ -45,6 +45,9 @@ git push -u origin main
 
 
 git fetch origin 						//update info about remote repository
+git remote -v
+git remote add origin git@github.com:namegitgub/repo.git
+or git remote add origin https://github.com/namegithub/repo.git
 git status							//shows the status of local repo relative to remote
 git log origin/main..main					//shows commits that are in your local but are miss. in remote
 git diff origin/main						//show difference between local and remote 
