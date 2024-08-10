@@ -1,0 +1,14 @@
+for install ru and us keyboard on ubuntu server linux need follow
+console-setup
+kbd
+
+sudo dpkg -l | grep console-setup		//to make sure that console-setup is installed
+sudo dpkg -l | grep kbd
+
+sudo nano /etc/default/keyboard
+
+XKBLAYOT="us,ru"
+XKBOPTIONS="grp:alt_shift_toggle"
+
+
+проверка работы раскладки 
