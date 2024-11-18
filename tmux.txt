@@ -1,0 +1,46 @@
+TMUX has the following concepts:
+SESSION
+WINDOW
+PANEL
+
+
+operations with SESSIONS
+tmux new -s <name>				create new session with <name>
+tmux attach -t <name>				connect to session named <name>
+tmux kill-session -t <name>			end the session with name <name>
+
+ctrl-b $	     				rename current session
+ctrl-b d					disconnect from current session
+
+
+
+operation with WINDOWS
+ctrl-b c					create new window
+ctrl-b n					to the next window
+ctrl-b p					to prepious window
+ctrl-b <number>					to the <number> window
+
+ctrl-b w					list of the all windows
+ctrl-b &					close current window
+
+
+
+operations with PANELS
+ctrl-b %					split the screen vertical
+ctrl-b "					split the screen horizontal
+
+ctrl-b o					to the next panel
+ctrl-b q					view numbers of panels and go to <number>
+ctrl-b <- or ->					moving between panels
+
+ctrl-b x     					close the current panel
+ctrl-b z					expand the current panel to full screen
+
+
+
+operations with COPY and INSERT
+ctrl-b [					enter COPY mode
+ctrl-space					begin the mark
+ctrl-w						copy and end the mark
+ctrl-b ]					PASTE
+tmux show-buffer				show
