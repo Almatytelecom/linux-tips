@@ -55,5 +55,5 @@ git rev-parse origin/main					//show hash of remote commit
 git rev-parse main						//show hash of local 
 
 git fetch origin
-git diff --stat origin/main					//brief statistic between local and								     remote
-git reset --hard origin/main					//hard synhronize local branch with								     remote 
+git diff --stat origin/main					//brief statistic between local andremote
+git reset --hard origin/main					//hard synhronize local branch withremote 
