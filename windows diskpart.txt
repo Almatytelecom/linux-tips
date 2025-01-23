@@ -1,5 +1,6 @@
-ctrl + s
+ win + s
 run as administrator cmd
+diskpart
 list disk
 select disk 1
 list partition
