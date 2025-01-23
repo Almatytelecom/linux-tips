@@ -1,0 +1,16 @@
+ctrl + s
+run as administrator cmd
+list disk
+select disk 1
+list partition
+select partition 1
+delete partion override
+
+clean					//delete all partition on selected disk
+create partition primary
+select partition 1
+active
+format fs=ntfs quick
+assign
+list volume
+
