@@ -1,0 +1,21 @@
+
+restart the server linux and press SHIFT , then press 'c' to enter to grub
+in the grub:
+set pager=1
+videoinfo
+normal
+
+//then turn on the linux server 
+
+sudo nano /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="nomodeset"
+GRUB_GFXPAYLOAD_LINUX=1280x1024
+
+sudo update-grub
+sudo reboot
+
+To set another font do:
+sudo dpkg-reconfigure console-setup
+
+
+
