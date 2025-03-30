@@ -30,12 +30,9 @@ ctrl-b %					split the screen vertical
 ctrl-b "					split the screen horizontal
 
 ctrl-b o					to the next panel
-ctrl-b ctrl-o					exchange of panel
 ctrl-b q					view numbers of panels and go to <number>
 ctrl-b <- or ->					moving between panels
 
-ctrl-b :resize-pane -D 5
-ctrl-b :resize-pane -U 5
 ctrl-b x     					close the current panel
 ctrl-b z					expand the current panel to full screen
 
