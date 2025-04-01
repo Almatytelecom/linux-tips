@@ -5,7 +5,7 @@ sudo systemctl status ssh		//does ssh service work or not
 sudo nano /etc/ssh/sshd_config		//find #Port 22 and change it
 
 sudo iptables -A INPUT -p tcp -s 192.168.200.66 --dport 10000 -m conntrack --ctstate NEW -j ACCEPT
-
+sudo iptables -A INPUT -p tcp -s 192.168.200.66 --dport 10000 -j ACCEPT
 
 ssh-keygen -t rsa			//generate private and public key
 eval "$(ssh-agent -s)"			//run ssh-agent
