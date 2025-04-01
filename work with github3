@@ -1,0 +1,18 @@
+
+
+
+git log --oneline --graph --decorate --all			//structure of repo
+git log  --graph --decorate --all
+
+
+
+git show --format="%H %ci" -s origin/main
+git show --format="%H %ci" -s main
+
+
+git diff origin/main main
+
+
+git log origin/main ^main --oneline				//show commit which in origin/main
+git log main ^origin/main --oneline 				//show commit which in main
+
