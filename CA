@@ -11,6 +11,9 @@ Common Name - CAdis
 CA creation complete. Your new CA certificate is at:
 * /etc/openvpn/easy-rsa/pki/ca.crt
 
-далее генерирую ключи для сервера и сертификаты(сервер я назвал ext):
+далее генерирую ключи для сервера (сервер я назвал ext):
 ./easyrsa gen-req ext nopass
 меня попросили назвать опять Common Name (видимо для сервера) я нажал просто enter
+далее я сгенерировал параметры Диффи-Хеллмана:
+./easyrsa gen-dh
+
