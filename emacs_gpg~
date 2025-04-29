@@ -1,0 +1,20 @@
+for adding keys from keyserver to gpg path of emacs (~/.emacs.d/elpa/gnupg)
+
+
+
+//getting ID of keys
+
+wget https://elpa.gnu.org/packages/archive-contents.sig    
+
+
+ 
+//view number of ID into archive-contents.sig
+
+gpg --list-packets ~/archive-contets.sig
+
+
+
+//search for a key by ID on keyserver
+
+gpg --keyserver hkps://keyserver.ubuntu.com --search-keys 0327BE68D64D9A1AA66859F15645357D2883A0966 
+
