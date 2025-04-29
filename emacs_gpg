@@ -16,7 +16,8 @@ gpg --list-packets ~/archive-contets.sig
 
 //search for a key by ID on keyserver
 
-gpg --keyserver hkps://keyserver.ubuntu.com --search-keys 0327BE68D64D9A1AA66859F15645357D2883A0966 
+gpg --keyserver hkps://keyserver.ubuntu.com --search-keys 0327BE68D64D9A1AA66859F15645357D2883A0966 or
+gpg --keyserver hkps://keyserver.ubuntu.com --search-keys 64x5357D2883A0966
 
 
 //add key to keyring gpg og emacs
