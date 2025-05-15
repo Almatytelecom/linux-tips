@@ -2,7 +2,15 @@
 sudo apt-get install openssh-server	//install openssh
 which sshd				//is it installed or not
 sudo systemctl status ssh		//does ssh service work or not
+
+
 sudo nano /etc/ssh/sshd_config		//find #Port 22 and change it
+
+
+#restart server
+sudo shutdown -r now
+
+
 
 sudo iptables -A INPUT -p tcp -s 192.168.200.66 --dport 10000 -m conntrack --ctstate NEW -j ACCEPT
 sudo iptables -A INPUT -p tcp -s 192.168.200.66 --dport 10000 -j ACCEPT
@@ -11,14 +19,14 @@ ssh-keygen -t rsa			//generate private and public key
 eval "$(ssh-agent -s)"			//run ssh-agent
 ssh-add ~/.ssh/private			//add private key to agent
 ssh-add -l				//list and view keys in the agent
-ssh-copy-id valdemar@192.168.50.10	//add my public key on server in the internet
+ssh-copy-id -p 10000 valdemar@192.168.50.10	//add my public key on server in the internet
 
 sudo iptables -A INPUT -p tcp\		//open 22 port for remote server
  --dport 22 -m conntrack\
  --ststate NEW -j ACCEPT
 ssh valdemar@192.168.50.10		//link to server in the internet
 
-scp valdemar@192.168.50.10:/home\
+scp -P 10000  valdemar@192.168.50.10:/home\
 /valdemar/mycertasyl/client.csr\
  /home/valdemar				//copy various data from server in the internet
 scp ~/test valdemar@192.168.50.10:~/	//copy various date from local machine to the server
