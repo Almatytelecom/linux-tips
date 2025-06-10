@@ -22,3 +22,25 @@ gpg --export-secret-keys -a 'asyl@asyl.tv' > private-key.asc
 
 gpg --import /path/to/public_key.asc					//import other keys
 gpg --import /path/to/private_key.asc
+
+############################################################################################
+
+gpg --list-keys --keyid-format long --with-fingerprint --with-subkey-fingerprint -- with-keygrip
+gpg --edit-key almaty@gmail.com
+gpg --edit-key 0xDEADBEEF
+
+############################################################################################
+for change expire date of main key and subkey:
+
+gpg --edit-key almaty@gmail.com
+gpg> key 1 								//choice sub-key
+gpg> expire								//change expire date
+gpg> save
+
+############################################################################################
+for change password of main key
+
+gpg --edit-key almaty@gmail.com
+gpg> passwd
+gpg> save
+
