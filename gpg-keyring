@@ -1,0 +1,7 @@
+Для получения ключей маинтенеров
+
+cd ~/downloads
+wget https://ftp.gnu.org/gnu/gnu-keyring.gpg
+gpg --import gnu-keyring.gpg
+gpg --verify emacs-29.3.tar.xz.sig emacs-29.3.tar.xz
+
