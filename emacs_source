@@ -3,6 +3,12 @@
 #пользователем его запускаешь и импортируешь keyring
 
 sudo apt-get update
+
+#необходимо подправить файл ubuntu.sources, а именно добавить deb-src в Types: deb
+
+sudo nano /etc/apt/sources.list.d/ubuntu.sources
+
+
 sudo apt-get build-dep emacs 
 cd ~/Downloads
 wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
