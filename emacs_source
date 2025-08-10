@@ -1,7 +1,9 @@
-sudo apt-get update sudo apt-get build-dep emacs cd ~/Downloads wget 
-https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz wget 
-https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz.sig wget 
-https://ftp.gnu.org/gnu/gnu-keyring.gpg
+sudo apt-get update
+sudo apt-get build-dep emacs 
+cd ~/Downloads
+wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
+wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz.sig
+wget https://ftp.gnu.org/gnu/gnu-keyring.gpg
 gpg --import gnu-keyring.gpg
 gpg --verify --keyring ./gnu-keyring.gpg emacs-30.1.tar.xz.sig 
 gpg --verify emacs-30.1.tar.xz.sig
