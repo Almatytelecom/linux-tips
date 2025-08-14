@@ -1,0 +1,50 @@
+для openvpn и stunnel создаем скрипты для автозагрузки
+
+01-stunnel.sh
+#!/bin/sh
+stunnel /etc/stunnel/stunnel.conf
+
+02-openvpn.sh
+#!/bin/sh
+openvpn --config /etc/openvpn/client/client.conf --daemon
+ 
+делаем файлы исполняемыми
+chmod +x /root/Startup/02-openvpn.sh
+chmod +x /root/Startup/01-stunnel.sh
+
+
+ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
+
+
+создаем файл clint.conf для openvpn
+client
+dev tun
+proto tcp
+remote 127.0.0.1 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+ca /etc/openvpn/client/ca.crt
+cert /etc/openvpn/client/pupdeswork.crt
+key /etc/openvpn/client/pupdeswork.key
+remote-cert-tls server
+verb 3
+
+
+создаем файл stunnel.conf
+client = yes
+foreground = no
+pid = /var/run/stunnel4/stunnel.pid
+
+[openvpn]
+accept = 127.0.0.1:1194
+connect = 88.204.160.230:443
+CAfile = /etc/stunnel/stunnel.pem
+verify = 2
+
+
+
+
+
+
