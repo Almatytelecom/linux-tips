@@ -8,6 +8,14 @@
 Загружаемся с нулевым состоянием
 Копируем dpupbw64save в dpupbw64base-1
 
+nano ~/.profile
+HISTSIZE=25000
+HISTFILESIZE=50000
+HISTTIMEFORMAT="%F %T "
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+
+export HISTSIZE HISTFILESIZE HISTTIMEFORMAT HISTCONTROL PROMPT_COMMAND
+
 4.Скачивание tmux,nano,git
 5.Установка Openvpn,Stunnel
 6.Установка с исходников Emacs 30.1
