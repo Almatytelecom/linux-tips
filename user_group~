@@ -1,9 +1,0 @@
-
-sudo adduser asyl
-
-sudo usermod -aG sudo asyl
-
-groups asyl						//show in which group
-
-su - asyl 						//go to user asyl
-
