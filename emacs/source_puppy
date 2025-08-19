@@ -2,3 +2,9 @@
 apt update 
 cd ~
 wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
+wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz.sig
+wget https://gtp.gnu.org/gnu/gnu-keyring.gpg
+gpg --verify --keyring ./gnu-keyring.gpg emacs-30.1.tar.xz.sig
+rm -rf emacs-30.1.tar.xz.sig
+rm -rf gnu-kering.gpg
+
