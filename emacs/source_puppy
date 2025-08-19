@@ -1,0 +1,4 @@
+
+apt update 
+cd ~
+wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
