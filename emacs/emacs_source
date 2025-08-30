@@ -4,12 +4,22 @@
 
 sudo apt-get update
 
+#если решено скачать исходники через репозиторий debian или ubuntu 
 #необходимо подправить файл ubuntu.sources, а именно добавить deb-src в Types: deb
 
+#для ubuntu
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
+#для puppy
+nano /etc/apt/sources.list
 
 
-sudo apt-get build-dep emacs 
+
+#Но обычно через репозиторий качается не последняя версия, а стабильная.
+#поэтому для последней версии качаем с gnu.org
+#apt-get build-dep emacs для puppy не работает . Так как он опирается на использование systemd
+#чего нету в puppy
+
+ 
 cd ~/Downloads
 wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
 wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz.sig
