@@ -1,5 +1,5 @@
 
-#Скачивание дистрибутива и проверка подписи и целостности. Для gpg очень важно под каким
+#Скачивание дистрибутива и проверка подписи и целостности. Для gpg очень важно под каким 
 #пользователем его запускаешь и импортируешь keyring
 
 sudo apt-get update
@@ -35,7 +35,7 @@ wget https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/10.0.
 cd ~/Downloads
 sfs_load devx_dpupbw64_10.0.11.sfs
 
-#пока непонятно делать ли apt install build-essential
+# apt install build-essential не стоит ставить , так как devx_dpupbw64_10.0.11.sfs перекрывает
 
 
 
