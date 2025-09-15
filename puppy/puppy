@@ -1,0 +1,24 @@
+
+
+файловая система puppy
+
+изначально puppy использовал UnionFS - 2003-05
+Потом перешли на AUFS( Another Union FS) -2006-2014
+C 2015 начался переход на OverlayFS
+
+.sfs это сжатая read-only файловая система
+его используют snap, AppImage, Android initramfs, Openwrt
+
+
+
+
+
+Пользователи
+
+В puppy есть пользователь spot
+он нужен в основном для запуска не из под root.
+
+
+например
+run-as-spot firefox
+
