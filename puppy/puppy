@@ -32,4 +32,4 @@ run-as-spot firefox
 4. cd /mnt/k
 5. ls -l
 6. cp -a devpup64save devpup64save-1 (обязательно опция -a)
-
+7.
