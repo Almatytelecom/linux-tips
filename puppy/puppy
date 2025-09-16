@@ -31,5 +31,12 @@ run-as-spot firefox
 3. mount /dev/sda1 /mnt/k
 4. cd /mnt/k
 5. ls -l
-6. cp -a devpup64save devpup64save-1 (обязательно опция -a)
-7.
+6. mkdir m
+6. cp -a devpup64save devpup64save-1 (обязательно опция -a) -возможно неправильно
+7. tar -cpzf archive.tar --xattrs dpupbw64save-base1
+8. tar --xattrs -xpvzf archive.tar -C /mnt/k/m
+9. cd m
+10. mv dpupbw64save-base1 ../dpupbw64save-base2
+11. cd ..
+12. du -sB1 --apparent-size dpupbw64save-base1
+13. du -sB1 --apparent-size dpupbw64save-base2
