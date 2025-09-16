@@ -40,3 +40,4 @@ run-as-spot firefox
 11. cd ..
 12. du -sB1 --apparent-size dpupbw64save-base1
 13. du -sB1 --apparent-size dpupbw64save-base2
+
