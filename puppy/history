@@ -1,0 +1,640 @@
+    1  vi ~/.profile
+    2  apt-get update && apt-get upgrade
+    3  apt install tmux -y
+    4  apt install nano -hy
+    5  apt install nano -y
+    6  apt install git
+    7  history
+    8  clear
+    9  hsitory
+   10  history
+   11  apt install stunnel4
+   12  apt install openvpn
+   13  nano /etc/localtime
+   14  ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
+   15  cd /etc/openvpn/client
+   16  ls -l
+   17  touch client.conf
+   18  vim client.conf
+   19  apt install vim
+   20  vim client.conf
+   21  ls -l
+   22  cd /etc/stunnel
+   23  ls -l
+   24  touch stunnel.conf
+   25  vim stunnel.conf
+   26  ip a
+   27  cd ~
+   28  ls -l
+   29  touch 01-stunnel.sh
+   30  touch 02-openvpn.sh
+   31  vim 01-stunnel.sh
+   32  vim 02-openvpn.sh
+   33  chmod +x /root/02-openvpn.sh
+   34  chmod +x /root/01-stunnel.sh
+   35  poweroff
+   36  eval "$(ssh-agent -s)"
+   37  ssh-add ~/.ssh/serverandru
+   38  ssh -p 11000 valdemar@88.204.160.230
+   39  pwd
+   40  scp -P 11000 valdemar@88.204.160.230:/home/valdemar/pupdeshome.crt .
+   41  scp -P 11000 valdemar@88.204.160.230:/home/valdemar/pupdeshome.key .
+   42  scp -P 11000 valdemar@88.204.160.230:/home/valdemar/stunnel.pem .
+   43  scp -P 11000 valdemar@88.204.160.230:/home/valdemar/ca.crt .
+   44  exit
+   45  exit
+   46  history
+   47  ip a
+   48  ssh -p 11000 valdemar@192.168.0.6
+   49  ssh -p 11000 valdemar@192.168.0.6:/home/valdemar/.ssh/serverandru
+   50  ssh -p 11000 valdemar@192.168.0.6:/home/valdemar/.ssh/serverandru .
+   51  cd .ssh
+   52  ls -l
+   53  scp -P 11000 valdemar@192.168.0.6:/home/valdemar/.ssh/serverandru .
+   54  clear
+   55  tmux
+   56  clear
+   57  cd .ssh
+   58  pwd
+   59  ls -l
+   60  mv pupdeshome.crt /etc/openvpn/client
+   61  mv pupdeshome.key /etc/openvpn/client
+   62  mv ca.crt /etc/openvpn/client
+   63  ls -l
+   64  mv stunnel.pem /etc/stunnel
+   65  ls -l /etc/stunnel
+   66  cd /etc/stunnel
+   67  chmod 600 stunnel.pem
+   68  ls -l
+   69  cd /etc/openvpn/client
+   70  ls -l
+   71  chmod 600 pupdeshome.key 
+   72  lclear
+   73  clear
+   74  ip a
+   75  ls -l
+   76  cd ..
+   77  cd ~
+   78  ls -l
+   79  ls -la
+   80  mv 01-stunnel.sh Startup
+   81  mv 02-openvpnd.sh Startup
+   82  mv 02-openvpn.sh Startup
+   83  cd Startup
+   84  ls -l
+   85  reboot
+   86  ip a
+   87  history
+   88  cd Startup
+   89  ls -l
+   90  nano 01-stunnel.sh
+   91  vim 02-openvpn.sh
+   92  ip a
+   93  cd /etc/openvpn/client
+   94  ls -l
+   95  cd client.conf
+   96  vim client.conf
+   97  cd /etc/stunnel
+   98  ls -l
+   99  vim stunnel.conf
+  100  stunnel /etc/stunnel/stunnel.pem
+  101  cd /etc/stunnel
+  102  ls -l
+  103  vim stunnel.pem
+  104  vim stunnel.conf
+  105  stunnel /etc/stunnel/stunnel.pem
+  106  ls -l
+  107  chmod 644 stunnel.pem
+  108  ls -l
+  109  stunnel /etc/stunnel/stunnel.pem
+  110  chmod 600 stunnel.pem
+  111  ls -l
+  112  vim stunnel.conf
+  113  cd ~/Startup
+  114  vim 01-stunnel.sh
+  115  cd /etc/stunnel
+  116  stunnel /etc/stunnel/stunnel.conf
+  117  reboot
+  118  ip a
+  119  cd /var/run
+  120  ls -l
+  121  cd stunnel4
+  122  ls -l
+  123  ps aux | grep stunnel
+  124  ss -tnlp | grep 1194
+  125  netstat -tlnp | grep 1194
+  126  ps aux | grep openvpn
+  127  tail -n 50 /var/log/messages | grep openvpn
+  128  openvpn --config /etc/openvpn/client/client.conf
+  129  cd /etc/openvpn/client
+  130  ls -l
+  131  vim client.conf
+  132  reboot
+  133  ip a
+  134  cd Startup
+  135  ls -l
+  136  nano 02-openvpn.sh
+  137  reboot
+  138  ip a
+  139  clear
+  140  ip a
+  141  clear
+  142  history
+  143  openvpn --config /etc/openvpn/client/client.conf
+  144  which openvpn
+  145  ip a
+  146  which openvpn
+  147  ls -l
+  148  cd Start
+  149  cd Startup
+  150  ls -l
+  151  vim 02-openvpn.sh
+  152  vim 01-stunnel.sh
+  153  vim 02-openvpn.sh
+  154  reboot
+  155  ip a
+  156  history
+  157  cd /mnt
+  158  ls -l
+  159  cd home
+  160  ls -l
+  161  cp -a dpupbw64save-baseRUresolution dpupbw64-baseCOPY1
+  162  du -sh dpupbw64save-baseRUresolution
+  163  du -sh  dpupbw64-baseCOPY1
+  164  reboot
+  165  which ld
+  166  ip a
+  167  clear
+  168  ca /etc/os-releas
+  169  cat /etc/os-release
+  170  ls -l /etc/apt/sources.list.d
+  171  cd /etc/apt
+  172  ls -l
+  173  vim sources.list
+  174  ls -l
+  175  cd ~
+  176  ls -l
+  177  cd Downloads
+  178  ls -l
+  179  which wget
+  180  apt update && apt-upgrade -y
+  181  apt update && apt upgrade -y
+  182  wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
+  183  wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz.sig
+  184  wget https://ftp.gnu.org/gnu/gnu-keyring.gpg
+  185  gpg --verify --keyring .gnu-keyring.gpg emacs-30.1.tar.xz.sig
+  186  ls -l
+  187  gpg --verify --keyring ./gnu-keyring.gpg emacs-30.1.tar.xz.sig
+  188  apt-get build-dep emacs
+  189  ls -l
+  190  clear
+  191  ls -l
+  192  tar xf emacs-30.1.tar.xz
+  193  cd emacs-30.1
+  194  ls -l
+  195  vim INSTALL.REPO
+  196  ping google.com
+  197  apt update && apt upgrade -y
+  198  poweroff
+  199  history
+  200  ls -l
+  201  cd Downloads
+  202  ls -l
+  203  reboot
+  204  poweroff
+  205  history
+  206  apt-get update && apt-get upgrade -y
+  207  ls -l
+  208  clear
+  209  ls -l
+  210  cd Downloads
+  211  ls -l
+  212  cd emacs-30.1
+  213  ls -l
+  214  ls -l
+  215  cd Downloads
+  216  ls -l
+  217  cd emacs-30.1
+  218  ls -l
+  219  ./configure
+  220  gcc --version
+  221  ls -l
+  222  cd ..
+  223  echo 'int main() { return 0; }' > test.c
+  224  ls -l
+  225  gss test.c -o test
+  226  gcc test.c -o test
+  227  uname -a
+  228  history | grep ftp
+  229  ls -l
+  230  wget https://https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/10.0.11/devx_dpupbw64_10.0.11.sfs
+  231  wget https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/10.0.11/devx_dpupbw64_10.0.11.sfs
+  232  cd /mnt
+  233  ls -l
+  234  cd home
+  235  ls -l
+  236  cd ~
+  237  ls -l
+  238  cd Downloads
+  239  ls -l
+  240  cp devx_dpupbw64_10.0.11.sfs /mnt/home
+  241  cd /mnt/home
+  242  ls -l
+  243  cd Downloads
+  244  ls -l
+  245  clear
+  246  ls -l /mnt/home
+  247  cd /mnt/home
+  248  ls -l
+  249  sfs_load -qc +/mnt/home/devx_dpupbw64_10.0.11.sfs
+  250  cd ~
+  251  cd Downloads
+  252  ls -l
+  253  gcc test.c -o test
+  254  sfs_load  +/mnt/home/devx_dpupbw64_10.0.11.sfs
+  255  htop
+  256  cd Downloads
+  257  ls -l
+  258  gcc test.c -o test
+  259  ld --version
+  260  sfs-load --list
+  261  sfs_load --list
+  262  mount | grep sfs
+  263  mount | grep overlay
+  264  cat /etc/rc.d/PUPSTATE |
+  265  cat /etc/rc.d/PUPSTATE | grep PUPMODE
+  266  cd ..
+  267  ls -l
+  268  cd ~
+  269  pwd
+  270  ls -l
+  271  cd Downloads
+  272  ls -l
+  273  cd emacs-30.1
+  274  ls -l
+  275  ./configure
+  276  nano config.log
+  277  history | grep al
+  278  history | grep a3
+  279  l3afpad config.log
+  280  which sfs-load
+  281  which sfs_load
+  282  cd Downloads
+  283  ls -l
+  284  cd ..
+  285  ls -l
+  286  sfs_load devx_dpupbw64_10.0.11.sfs
+  287  pwd
+  288  ls -l
+  289  history
+  290  ls -l
+  291  gcc test.c -o test
+  292  ls -l
+  293  ./test
+  294  nano
+  295  nano test.c
+  296  gcc test.c -o test
+  297  clear
+  298  reboot
+  299  apt install libgtk-3-dev
+  300  cd /etc/apt
+  301  ls -l
+  302  nano sources.list
+  303  ls -l
+  304  cd Downloads
+  305  ls -l
+  306  rm -rf test
+  307  ls -l
+  308  gcc test.c -o test
+  309  nano test.c
+  310  gcc test.c -o test
+  311  history
+  312  cd /mnt/home
+  313  ls -l
+  314  history
+  315  sfs_load devx_dpupbw64_10.0.11.sfs
+  316  history
+  317  ls 
+  318  pwd
+  319  cd ~
+  320  cd Downloads
+  321  ls -l
+  322  cd emacs-30.1
+  323  ls -l
+  324  clear
+  325  ./configure
+  326  apt update
+  327  apt upgrade -y
+  328  apt install build-essential
+  329  apt install libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk-3-dev libncurses-dev libgnutls28-dev libxml2-dev libharfbuzz-dev libjansson-dev libg
+  330  apt install libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk-3-dev libncurses-dev libgnutls28-dev libxml2-dev libharfbuzz-dev libjansson-dev
+  331  apt install libx11-dev
+  332  apt install  libxpm-dev
+  333  apt install libjpeg-dev
+  334  apt install  libpng-dev libgif-dev libtiff-dev
+  335  apt install libgtk-3-dev
+  336  apt install libncurses-dev
+  337  apt install  libgnutls28-dev libxml2-dev libharfbuzz-dev libjansson-dev
+  338  apt install  libxml2-dev libharfbuzz-dev libjansson-dev
+  339  apt install  libgnutls28-dev
+  340  apt install   libharfbuzz-dev libjansson-dev
+  341  apt install   libharfbuzz-dev
+  342  apt install   libjansson-dev
+  343  apt install libgtk-3-dev libgnutls28-dev libxml2-dev libharfbuzz-dev
+  344  history
+  345  apt install libgnutls28-dev
+  346  apt install libxml2-dev
+  347  echo ' libgtk-3-dev libgnutls28-dev libxml2-dev libharfbuzz-dev ' > mymissing_lib
+  348  ls -l
+  349  mv mymissing_lib ../
+  350  ls -l ../
+  351  nano ../mymissing_lib
+  352  apt install libgccjit-10-dev
+  353  apt install libgccjit-12-dev
+  354  pwd
+  355  ./configure --with-x --with-gtk
+  356  ./configure --with-x --with-x-toolkit=gtk3
+  357  make -j$(nproc)
+  358  apt update
+  359  apt upgrade -y
+  360  apt install libasound2-dev
+  361  apt upgrade -y
+  362  apt install librsvg2-dev
+  363  make -j$(nproc)
+  364  apt install libxaw7-dev
+  365  make -j$(nproc)
+  366  apt install libsft-dev libxmu-dev libxrandr-dev libxi-dev libxinerama-dev libxpm-dev libxt-dev
+  367  apt install libxft-dev libxmu-dev libxrandr-dev libxi-dev libxinerama-dev libxpm-dev libxt-dev
+  368  make -j$(nproc)
+  369  which libgtk-3-dev
+  370  apt-get install build-essential libgtk-3-[200~apt-get install build-essential     libgtk-3-dev     libxpm-dev     libjpeg-dev     libgif-dev     libtiff-dev     libgnutls28-dev     libncurses-dev     libxml2-dev     libx11-dev     libxft-dev     libxrender-dev
+  371  apt-get install build-essential libgtk-3-dev
+  372  apt-get install build-essential libgtk-3-dev libxpm-dev
+  373  apt-get install build-essential libgtk-3-dev libxpm-dev libjpeg-dev libgif-dev libtiff-dev libgnutls28-dev libncurses-dev libxml2-dev libx11-dev libxft-dev libxrender-dev
+  374  make distclean
+  375  ./configure --with-x
+  376  make -j$(nproc)
+  377  sudo make install
+  378  which emacs
+  379  emacs
+  380  emacs --version
+  381  history
+  382  history | less
+  383  nano /etc/apt/sources.list
+  384  apt dist-upgrade
+  385  apt install libgtk-3-dev
+  386  apt-get dist-upgrade 
+  387  apt full-upgrade
+  388  apt --fix-broken install
+  389  dpkg --configure -a
+  390  clear
+  391  apt install libgtk-3-dev
+  392  apt full-upgrade
+  393  apt install gir1.2-gbkpixbuf-2.0
+  394  apt install gir1.2-gdkpixbuf-2.0
+  395  apt install libgdk-pixbuf-2.0-0 
+  396  apt install libgdk-pixbuf2.0-common
+  397  apt install libgdk-pixbuf-2.0-0
+  398  apt install libgdk-pixbuf-2.0-bin
+  399  apt install libgdk-pixbuf2.0-bin
+  400  apt-get install libicu-dev
+  401  apt-get install libicu72
+  402  apt-get install libicu-dev
+  403  apt upgrade -y
+  404  apt install libgtk-3-dev
+  405  apt install libgnutls28-dev
+  406  apt upgrade -y
+  407  apt-get build-dep emacs
+  408  which git
+  409  which pkg-config
+  410  which gettext
+  411  nano /etc/apt/source.list
+  412  cd /etc/apt
+  413  ls -l
+  414  nano sources.list
+  415  mkdir emacs_experimental
+  416  cd emacs_experimental
+  417  ls -l
+  418  apt-get update
+  419  apt-get source emacs
+  420  cd /etc/apt
+  421  nano sources.list
+  422  apt-get update 
+  423  apt-get upgrade -y
+  424  clear
+  425  cd ~
+  426  ls -l
+  427  cd Downloads
+  428  ls -l
+  429  cd ..
+  430  ls -l
+  431  mkdir emacs-exp
+  432  cd emacs-exp
+  433  ls -l
+  434  apt-get source emacs
+  435  ls -l
+  436  cd emacs-28.2+1
+  437  ls -l
+  438  clear
+  439  cd ../..
+  440  ls -l
+  441  df -sh
+  442  du -sh emacs-exp
+  443  ls -l
+  444  rm -rf emacs-exp
+  445  ls -l
+  446  history
+  447  emacs
+  448  sfs_load -l
+  449  mount | grep squashfs
+  450  which gcc
+  451  sfs_load -l
+  452  mount | grep devx
+  453  which g++
+  454  which gfortran
+  455  which ld
+  456  which make
+  457  cd /mnt/home
+  458  ls -l
+  459  rm -rf devx_dpupbw64_10.0.11.sfs
+  460  ls -l
+  461  reboot
+  462  which gcc
+  463  which make
+  464  sfs_load 
+  465  sfs_load -l
+  466  sfs_load.overlay -h
+  467  sfs_load.overlay --help
+  468  sfs_load.overlay --h
+  469  sfs_load.overlay -l
+  470  which cmake
+  471  which make
+  472  ls /initrd
+  473  ls /initrd/pup_rw
+  474  ls /initrd/pup_ro2
+  475  ls /initrd/pup_ro* | grep devx
+  476  mount | grep sfs
+  477  mount | grep devx
+  478  sfs_load -v
+  479  sfs_load.overlay
+  480  sfs_load.overlay -v
+  481  sfs_load.overlay --version
+  482  less /sbin/sfs_load.overlay
+  483  which cmake
+  484  ls -l;
+  485  ls -l
+  486  clear
+  487  cd Downloads
+  488  ls -[l
+  489  ls -l
+  490  sfs_load.overlay devx_dpupbw64_10.0.11.sfs
+  491  which gcc
+  492  which cmake
+  493  which gfortran
+  494  sfs_load.overlay devx_dpupbw64_10.0.11.sfs
+  495  which cmake
+  496  ping google.com
+  497  sfs_load.overlay -v
+  498  mount | grep aufs
+  499  mount | grep overlayfs
+  500  mount | grep overlay
+  501  poweroff
+  502  ip a
+  503  history
+  504  ip a
+  505  which openvpn
+  506  cd Startup
+  507  ls -l
+  508  ping google.com
+  509  ping 8.8.8.8
+  510  poweroff
+  511  ip a
+  512  clear
+  513  ping google.com
+  514  clear
+  515  reboot
+  516  ip a
+  517  poweroff
+  518  history
+  519  poweroff
+  520  history
+  521  history | less
+  522  lsmod | grep -E 'aufs|overlay'
+  523  lsmod | grep aufs
+  524  lsmod | grep overlay
+  525  mount | grep ' / '
+  526  cat /proc/filesystems
+  527  cat /proc/filesystems | grep overlay
+  528  cat /proc/filesystems | grep aufs
+  529  mount | grep overlay
+  530  cd /mount/home
+  531  cd /mount
+  532  cd /mnt/home
+  533  ls -l
+  534  mount | grep '/pup_'
+  535  clear
+  536  mount | grep '/pup_'
+  537  losetup -a
+  538  mount | grep 'pup_'
+  539  clear
+  540  mount | grep 'pup_'
+  541  losetup -a
+  542  ls -l
+  543  cd Downloads
+  544  ls -l
+  545  sfs_load devx_dpupbw64_10.0.11.sfs
+  546  sfs_load -l
+  547  losetup -a
+  548  mount | grep pup
+  549  cd /home
+  550  ls -l
+  551  cd spot
+  552  ls -l
+  553  nano README.txt
+  554  whoami
+  555  nano README.txt
+  556  su spot
+  557  history
+  558  reboot
+  559  emacs
+  560  poweroff
+  561  iptables -A tcp_inbound -p tcp --dport 11000 -m conntrack --ctstate NEW -j ACCEPT
+  562  history | grep save
+  563  ls -l /etc/iptables
+  564  cd /etc
+  565  cd iptables
+  566  apt update
+  567  which iptables-persistent
+  568  apt install iptables-persistent
+  569  ls -l
+  570  cd iptables
+  571  ls -l
+  572  nano rules.v4
+  573  sh -c "iptables-save > /etc/iptables/rules.v4
+  574  sh -c "iptables-save > /etc/iptables/rules.v4"
+  575  ls -l
+  576  iptables-save > /etc/iptables/rules.v4
+  577  which iptables-legacy-save
+  578  iptables-legacy-save > /etc/iptables/rules.v4
+  579  ls -l
+  580  nano rules.v4
+  581  update-alternatives --display iptables
+  582  nft list ruleset
+  583  iptables-nft-save
+  584  nft list ruleset
+  585  ip6tables -L
+  586  ip6tables -S
+  587  iptables -L 11000
+  588  iptables -L
+  589  reboot
+  590  which emacs
+  591  emacs
+  592  ip a
+  593  clea
+  594  clear
+  595  ls -l
+  596  cd Downloads
+  597  ls -l
+  598  nano mymissing_lib
+  599  clear
+  600  history
+  601  ip a
+  602  iptables -L
+  603  iptables -S
+  604  iptables -L
+  605  cd /etc/iptables
+  606  ls -l
+  607  nano rules.v4
+  608  iptables -L
+  609  systemctl list-unit-files | grep iptables
+  610  grep -r "iptables-restore" /etc/systemd/system /lib/systemd/system
+  611  history | grep pup
+  612  grep -r "iptables-restore" /etc/init.d 
+  613  grep -r "iptables-restore" /root/Startup
+  614  grep -r "iptables-restore" /etc/rc.d
+  615  grep -n "IPTR" /etc/init.d/rc.firewall
+  616  cd /etc/sysconfig/iptables
+  617  cd /etc/sysconfig
+  618  cd /etc
+  619  cd sysconfig
+  620  ls
+  621  cd /etc/sysconfig/iptablesi
+  622  cd /etc/sysconfig
+  623  nano /etc/rc.d/firewall.conf
+  624  history
+  625  grep -r "iptables-restore" /etc/init.d
+  626  nano /etc/init.d/rc.firewall
+  627  l3afpad /etc/init.d/rc.firewall
+  628  /etc/init.d/rc.firewall save
+  629  cd /etc/sysconfig
+  630  cd /etc
+  631  mkdir sysconfig
+  632  /etc/init.d/rc.firewall save
+  633  cd /etc/sysconfig
+  634  ls -l
+  635  nano iptables
+  636  ls-l
+  637  ls -l
+  638  cd 
+  639  ls -l
+  640  history > history
