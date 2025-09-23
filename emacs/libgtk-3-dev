@@ -101,3 +101,9 @@ Depends: libgdk-pixbuf2.0-bin (= 2.42.10+dfsg-1+deb12u2) but 2.42.10+dfsg->
 
 
 
+apt list -a libgdk-pixbuf
+
+
+
+
+
