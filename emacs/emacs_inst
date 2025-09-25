@@ -1,0 +1,15 @@
+apt update
+cd Downloads
+wget https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/10.0.11/devx_dpupbw64_10.0.11.sfs
+sfs_load devx_dpupbw64_10.0.11.sfs
+apt-mark unhold libicu72
+apt-mark unhold libglib2.0-0
+apt-mark unhold libglib2.0-bin
+apt-mark unhold libexpat1
+apt-mark unhold libgdk-pixbuf-2.0-0
+apt-mark unhold libgdk-pixbuf2.0-bin
+apt-mark unhold gir1.2-gdkpixbuf-2.0
+apt-mark unhold libgdk-pixbuf2.0-common
+apt install 
+
+
