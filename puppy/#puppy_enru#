@@ -1,7 +1,0 @@
-Для смены шрифтов
-Заходим в Puppy Setup->Mouse/Keyboard->Advanced configuration->Keyboard Model->p105
-Далее заходим Puppy Setup->Mouse/Keyboard->Advanced configuration->Group Shift/Lock begavior->
-LeftAlt LeftShift
-Далее заходим Puppy Setup->Mouse/Keyboard->Advanced configuration->Layouts->
-Здесь добавляем сначала английский далее русский.
-Позже проверяем в L.variants что там есть и английский и русский варики
