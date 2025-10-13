@@ -1,0 +1,7 @@
+apt update
+cd Downloads
+sfs_load devx_dpupbw64_10.0.11.sfs
+cd ../emacs-30.1
+mkdir build
+cd build
+
