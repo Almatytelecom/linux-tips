@@ -30,6 +30,10 @@ apt install libgccjit-12-dev
 до этой линии надо попробовать собрать - и посмотреть будет ли работать с gui
 ____________________________________________________________________________
 
+не ставилось сразу:
+apt install libharfbuzz-dev
+apt install libxml2-dev
+apt install libgnutls28-dev
 
 
 
