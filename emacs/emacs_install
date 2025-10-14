@@ -10,7 +10,7 @@ sfs_load devx_dpupbw64_10.0.11.sfs
 Начал ставить согласно history c домашней машины
 apt install libx11-dev - установилось
 apt install libxpm-dev - установилось 
-apt install libjpeg - установилось
+apt install libjpeg-dev - установилось
 apt install libpng-dev libgif-dev libtiff-dev - установилось 
 
 apt install libncurses-dev - установил 
