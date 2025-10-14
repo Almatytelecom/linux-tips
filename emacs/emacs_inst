@@ -23,6 +23,9 @@ apt install libtiff-dev
 
 apt install libncurses-dev
 
+apt install libjansson-dev
+apt install libgccjit-12-dev
+
 
 до этой линии надо попробовать собрать - и посмотреть будет ли работать с gui
 ____________________________________________________________________________
