@@ -21,6 +21,7 @@ apt install libtiffxx6
 apt install libtiff6
 apt install libtiff-dev
 
+apt install libncurses-dev
 
 
 
