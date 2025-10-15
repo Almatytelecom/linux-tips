@@ -40,7 +40,7 @@ libharfbuzz-dev:
 apt-mark unhold libicu72
 apt-mark unhold libglib2.0-0
 apt-mark unhold libglib2.0-bin
-
+apt install libharfbuzz-dev
 
 libxml2-dev:
 apt install libxml2
