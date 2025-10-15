@@ -53,7 +53,7 @@ libgnutls-dane0
 libgnutls-openssl27
 libgnutls30
 libgnutlsxx30
-
+apt install libgnutls28-dev
 
 
 
