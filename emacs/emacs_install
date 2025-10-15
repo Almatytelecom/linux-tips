@@ -82,6 +82,9 @@ apt show libglib2.0-0 - посмотреть версию
 
 apt policy пакет
 
+apt-cache depends libglib2.0-bin
+apt-cache rdepends libglib2.0-bin
+
 если хочешь посмотреть какая именно версия установлена 
 
 apt list --installed libglib2.0-0
