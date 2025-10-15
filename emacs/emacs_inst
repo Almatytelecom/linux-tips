@@ -44,7 +44,7 @@ apt install libharfbuzz-dev
 
 libxml2-dev:
 apt install libxml2
-
+apt install libxml2-dev
 
 
 libgnutls28-dev:
