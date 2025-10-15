@@ -65,7 +65,7 @@ apt-mark unhold libgdk-pixbuf2.0-common
 apt install librsvg2-dev
 
 
-
+apt install libgtk-3-dev
 
 
 
