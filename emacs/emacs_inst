@@ -56,12 +56,12 @@ libgnutlsxx30
 apt install libgnutls28-dev
 
 
-
+ librsvg2-dev:
 apt-mark unhold libexpat1
 apt-mark unhold libgdk-pixbuf-2.0-0
 apt-mark unhold libgdk-pixbuf2.0-bin
 apt-mark unhold gir1.2-gdkpixbuf-2.0
 apt-mark unhold libgdk-pixbuf2.0-common
-apt install 
+apt install librsvg2
 
 
