@@ -62,6 +62,12 @@ apt-mark unhold libgdk-pixbuf-2.0-0
 apt-mark unhold libgdk-pixbuf2.0-bin
 apt-mark unhold gir1.2-gdkpixbuf-2.0
 apt-mark unhold libgdk-pixbuf2.0-common
-apt install librsvg2
+apt install librsvg2-dev
+
+
+
+
+
+
 
 
