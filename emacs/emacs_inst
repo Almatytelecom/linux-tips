@@ -36,11 +36,14 @@ apt install libxml2-dev
 apt install libgnutls28-dev
 
 
-libharfbuzz:
+libharfbuzz-dev:
 apt-mark unhold libicu72
 apt-mark unhold libglib2.0-0
 apt-mark unhold libglib2.0-bin
 
+
+libxml2-dev:
+apt install libxml2
 
 
 apt-mark unhold libexpat1
