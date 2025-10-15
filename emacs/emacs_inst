@@ -46,6 +46,17 @@ libxml2-dev:
 apt install libxml2
 
 
+
+libgnutls28-dev:
+may be you need just unhold libgnutls28(without dev)
+libgnutls-dane0
+libgnutls-openssl27
+libgnutls30
+libgnutlsxx30
+
+
+
+
 apt-mark unhold libexpat1
 apt-mark unhold libgdk-pixbuf-2.0-0
 apt-mark unhold libgdk-pixbuf2.0-bin
