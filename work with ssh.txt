@@ -32,6 +32,10 @@ scp -P 10000  valdemar@192.168.50.10:/home\
 scp ~/test valdemar@192.168.50.10:~/	//copy various date from local machine to the server
 
 
+
+
+ssh -R
+
 На сервере надо временно открыть кроме ssh порта 11000 еще один порт например 8000
 sudo iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
 Также на сервере необходимо поменять конфиг sshd
