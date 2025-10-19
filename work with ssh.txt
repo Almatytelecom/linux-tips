@@ -30,3 +30,18 @@ scp -P 10000  valdemar@192.168.50.10:/home\
 /valdemar/mycertasyl/client.csr\
  /home/valdemar				//copy various data from server in the internet
 scp ~/test valdemar@192.168.50.10:~/	//copy various date from local machine to the server
+
+
+На сервере надо временно открыть кроме ssh порта 11000 еще один порт например 8000
+sudo iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+Также на сервере необходимо поменять конфиг sshd
+/etc/ssh/sshd_config
+и добавить(разкоментировать) параметр
+GatewayPorts yes
+На том компе куда хотим заходить необходимо открыть временный порт - например 9000
+И настроить на него sshd через /etc/ssh/sshd_config
+
+ssh -p 11000 -R 8000:localhost:9000 valdemar@88.204.160.230
+
+если используем на том компе стандартный порт 22 :
+ssh -p 11000 -R 8000:localhost:22 valdemar@88.204.160.230
