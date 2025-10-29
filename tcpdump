@@ -10,24 +10,15 @@ iplink set eth0 promisc off
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sudo tcpdump -c 50 -l -n -e -i enp3s0 ip | awk '{split($12, a, "."); print a[1]"."a[2]"."a[3]"."a[4]}' | sort | uniq -c | uniq -nr
 
 
 sudo tcpdump -c 50 -l -n -e -i enp3s0 ip and dst 224.0.0.251 | awk '{split($10, a, "."); print a[1]"."a[2]"."a[3]"."a[4]}' | sort | uniq -c | sort -nr
 
 sudo tcpdumpt -c 50 -l -n -e -i enp3s0 ip | awk '{sptit($10, a, "."); print a[1]"."a[2]"."a[3]"."a[4]"\t"$2}' | sort | uniq -c | sort -nr
+
+
+sudo tcpdump -c 10 -tql -nn -i eth4.41 broadcast
+
+sudo tcpdump -D посмотреть интерфейсы
 
