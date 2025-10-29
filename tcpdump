@@ -4,6 +4,9 @@ ip link set eth0 promisc on
 
 ip link show eth0
 
+ip link add link eht0 name eth0.508 type vlan id 508
+
+
 выключение
 iplink set eth0 promisc off
 
