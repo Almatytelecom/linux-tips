@@ -4,8 +4,13 @@ ip link set eth0 promisc on
 
 ip link show eth0
 
-ip link add link eht0 name eth0.508 type vlan id 508
+ip link add link eth0 name eth0.508 type vlan id 508
 
+sudo ip link set dev eth0.508 up
+
+/etc/netplan/50-cloud-init.yaml - add ip or dhcp for eth0.508
+
+sudo netplan try
 
 выключение
 iplink set eth0 promisc off
