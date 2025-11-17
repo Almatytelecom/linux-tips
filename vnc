@@ -1,0 +1,17 @@
+sudo apt update
+sudo apt install x11vnc
+sudo iptables -A INPUT -i tun0 -p tcp --dport 5900 -j ACCEPT
+x11vnc -storepasswd
+x11vnc -usepw -forever -shared -display :0 -auth guess
+touch ~/Startup/start_x11vnc
+#!/bin/sh
+nohup x11vnc -forever -usepw -display :0 &
+or
+x11vnc -forever -usepw -display :0 &
+disownd
+
+
+потом чтобы посмотреть 
+jobs
+fg %1 - вернуть на передний план
+
