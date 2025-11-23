@@ -1,0 +1,17 @@
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+в файле /etc/ssh/sshd_config
+меняем
+PermitRootLogin yes
+PasswordAuthentification yes
+
+ставим пароль на root
+passwd
+
+меняем настройки tcpwarp
+а именно файла 
+/etc/hosts.allow
+
+добавляем строку для доступа из адресов 
+10.8.*.*
+
+sshd: 10.8.
