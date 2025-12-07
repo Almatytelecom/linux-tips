@@ -21,3 +21,6 @@ sudo iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT			//for pings
 sudo iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 sudo iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
 sudo iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+
+
+sudo iptables -A INPUT -m limit --limit 3/s --limit-burst 20 -j LOG --log-prefix "IPT_DROP_INPUT: " --log-level 4
