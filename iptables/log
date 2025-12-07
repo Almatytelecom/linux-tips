@@ -1,0 +1,19 @@
+sudo iptables -A INPUT -d 255.255.255.255 -j DROP
+sudo iptables -A INPUT -d 224.0.0.0/4 -j DROP
+sudo iptabels -A INPUT -d 192.168.1.255 -j DROP
+
+sudo iptables -A INPUT -m limit --limit 3/s --limit-burst 20 -j LOG --log-prefix "IPT_DROP_INPUT: " --log-level 4
+
+
+sudo journalctl -kf
+or
+sudo journalctl -k | grep IPT
+
+/var/log/kern.log
+/var/log/messages
+/var/log/syslog
+
+tail -f /var/log/syslog
+
+dmesg | tail -n 20
+dmesg -w -сообщения ядра в реальном времени
