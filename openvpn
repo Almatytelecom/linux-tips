@@ -1,0 +1,3 @@
+echo "deb [trusted=yes] https://build.openvpn.net/debian/opnvpn/stable jammy main" | sudo tee /etc/apt/sources.list.d/openvpn.list
+sudo apt update
+sudo apt upgrade -y
