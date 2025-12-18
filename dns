@@ -1,0 +1,5 @@
+cat /etc/resolv.conf
+or
+nmcli dev show | grep DNS
+or
+systemd-resolve --status
