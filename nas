@@ -28,3 +28,47 @@ sudo systemctl enable smbd
 
 С windows машины проверяем 
 \\YOUR_IP\Shared
+
+для работы по пользователям
+sudo chown -R root:storage /mnt/data/shared
+sudo chmod -R 2770 /mnt/data/shared
+создаем пользователей в Linux:
+sudo adduser aizhan
+sudo adduser ashat
+создаем группу storage
+sudo groupadd storage
+sudo usermod -aG storage aizhan
+sudo usermod -aG storage ashat
+sudo groups ashat
+sudo groups aizhan
+создаем пользователей в samba:
+sudo smbpasswd -a ashat
+sudo smbpasswd -a aizhan
+sudo pdbedit -L
+
+sudo systemctl restart smbd
+sudo smbclient //localhost/shared -U aizhan
+sudo -u aizhan touch /mnt/data/shared/test_file
+sudo tail -f /var/log/samba/log.smbd
+sudo nano /etc/samba/smb.conf
+добавить строки:
+[global]
+workgroup = WQRKGROUP
+security = user
+ntlm auth = yes
+server min protocol = SMB2
+server max protocol = SMB3
+
+map to guest = never
+usershare allow guests = yes
+[Shared]
+path = /mnt/data/shared
+browseable = yes
+writable = yes
+valid users = @storage
+create mask = 0660
+directory mask = 2770
+read only = no
+guest ok = no
+
+
