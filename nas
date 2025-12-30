@@ -72,3 +72,6 @@ read only = no
 guest ok = no
 
 
+На windows в cmd
+net use * /delete
+net use Z: \\192.168.40.1\shared /user:192.168.40.1\aizhan Q88kU267 /persistent:yes
