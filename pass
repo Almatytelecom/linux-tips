@@ -1,0 +1,20 @@
+если я хочу установить pass на еще один комп
+sudo apt-get update 
+sudo apt-get install pass gnupg
+возможно gnupg уже стоит. проверка - which gpg.
+
+На машине где уже стоит pass :
+gpg --list-secret-keys //посмотреть ID ключа
+gpg --armor --export-secret-keys KEYID > private.key.asc
+Далее скопировать ключ на машину где необходим pass
+
+
+gpg --import private.key.asc
+gpg --list-secret-keys - проверка что импортировался
+
+далее клонируем .password-store из github
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/gith
+cd ~
+git clone git@github.com:Almatytelecom/.password-store.git
+
