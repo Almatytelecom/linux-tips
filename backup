@@ -11,5 +11,10 @@ sudo chown rsyncb:rsyncb /home/rsyncb/.ssh
 ssh-keygen -t rsa -b 4096  - имя rsyncb
 ssh-copy-id -p 11000 rsyncb@10.8.0.16
 отключаем временный доступ по паролю в /etc/ssh/sshd_config
-
+редактируем файл /home/rsyncb/.ssh/authorized_keys
+command="rsync --server --daemon .",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc ssh-ed25519 AAAA...
+на удаленной машине:
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/rsyncb
+rsync -avz --numeric-ids --delete -e "ssh -p 11000" rsyncb@10.8.0.16:/mnt/data/shared /mnt/data/shared
 
