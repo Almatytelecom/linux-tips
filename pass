@@ -5,7 +5,7 @@ sudo apt-get install pass gnupg
 
 На машине где уже стоит pass :
 gpg --list-secret-keys //посмотреть ID ключа
-gpg --armor --export-secret-keys KEYID > private.key.asc
+gpg --export-secret-keys KEYID > private.key.asc
 Далее скопировать ключ на машину где необходим pass
 
 
