@@ -1,4 +1,4 @@
-lsblk - для просмотра и нахождения названия вставленного диска
+Kanat lsblk - для просмотра и нахождения названия вставленного диска
 sudo mkfs.ext4 /dev/sdb
 sudo mkdir -p /mnt/data
 sudo mount /dev/sdb /mnt/data - временно монтируем для проверки
