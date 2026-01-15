@@ -1,0 +1,9 @@
+для начала нужно установить ssh на машину которую хотим резервировать
+sudo adduser --system --shell /bin/bash --home /home/rsyncb rsyncb
+sudo passwd rsyncb - устанавливаем пароль
+sudo mkdir -p /home/rsyncb/.ssh
+sudo chmod 700 /home/rsyncb/.ssh
+sudo groupadd rsyncb
+sudo usermod -g rsyncb rsyncb
+sudo chown rsyncb:rsyncb /home/rsyncb/.ssh
+
