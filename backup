@@ -1,4 +1,4 @@
-для начала нужно установить ssh на машину которую хотим резервировать
+для начала нужно установить ssh на машину которую хотим резервировать например nas
 sudo adduser --system --shell /bin/bash --home /home/rsyncb rsyncb
 sudo passwd rsyncb - устанавливаем пароль
 sudo mkdir -p /home/rsyncb/.ssh
@@ -6,4 +6,10 @@ sudo chmod 700 /home/rsyncb/.ssh
 sudo groupadd rsyncb
 sudo usermod -g rsyncb rsyncb
 sudo chown rsyncb:rsyncb /home/rsyncb/.ssh
+временно разрешаем доступ по паролю ssh в файле /etc/ssh/sshd_config
+создаем ключ на backup сервере для доступа на nas
+ssh-keygen -t rsa -b 4096  - имя rsyncb
+ssh-copy-id -p 11000 rsyncb@10.8.0.16
+отключаем временный доступ по паролю в /etc/ssh/sshd_config
+
 
