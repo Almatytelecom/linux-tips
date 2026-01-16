@@ -1,3 +1,13 @@
+создание backup строится на основе трех пунктов:
+1. создание user для backup
+2. создание максимально ограниченного доступа на backup:
+ a. ограничение по authorized_keys
+ б. ограничение по возможностям user в системе
+ в. ограничение по изменению ФС
+3. создание команды бэкапирование
+4. создание cron 
+
+
 для начала нужно установить ssh на машину которую хотим резервировать например nas
 sudo adduser --system --shell /usr/sbin/nologin --home /home/rsyncb rsyncb
 sudo passwd rsyncb - устанавливаем пароль
@@ -14,6 +24,8 @@ ssh-copy-id -p 11000 rsyncb@10.8.0.16
 редактируем файл /home/rsyncb/.ssh/authorized_keys
 no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-pty,no-user-rc ssh-ed25519 AAAA...
 usermod -s /usr/sbin/nologin rsyncb - в случае если сразу не прописали nologin
+usermod -aG storage rsyncb
+
 на удаленной машине:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/rsyncb
