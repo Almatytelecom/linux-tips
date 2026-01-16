@@ -1,5 +1,5 @@
 для начала нужно установить ssh на машину которую хотим резервировать например nas
-sudo adduser --system --shell /bin/bash --home /home/rsyncb rsyncb
+sudo adduser --system --shell /usr/sbin/nologin --home /home/rsyncb rsyncb
 sudo passwd rsyncb - устанавливаем пароль
 sudo mkdir -p /home/rsyncb/.ssh
 sudo chmod 700 /home/rsyncb/.ssh
@@ -12,7 +12,8 @@ ssh-keygen -t rsa -b 4096  - имя rsyncb
 ssh-copy-id -p 11000 rsyncb@10.8.0.16
 отключаем временный доступ по паролю в /etc/ssh/sshd_config
 редактируем файл /home/rsyncb/.ssh/authorized_keys
-command="rsync --server --daemon .",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc ssh-ed25519 AAAA...
+no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-pty,no-user-rc ssh-ed25519 AAAA...
+usermod -s /usr/sbin/nologin rsyncb - в случае если сразу не прописали nologin
 на удаленной машине:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/rsyncb
