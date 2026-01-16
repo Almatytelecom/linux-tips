@@ -17,5 +17,5 @@ usermod -s /usr/sbin/nologin rsyncb - в случае если сразу не �
 на удаленной машине:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/rsyncb
-rsync -avz --numeric-ids --delete -e "ssh -p 11000" rsyncb@10.8.0.16:/mnt/data/shared /mnt/data/shared
+rsync -avz --numeric-ids --delete -e "ssh -p 11000" rsyncb@10.8.0.16:/mnt/data/shared/ /mnt/data/shared/ - не забыть про / в конце
 
