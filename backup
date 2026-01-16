@@ -29,5 +29,5 @@ usermod -aG storage rsyncb
 на удаленной машине:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/rsyncb
-rsync -avz --numeric-ids --delete -e "ssh -p 11000" rsyncb@10.8.0.16:/mnt/data/shared/ /mnt/data/shared/ - не забыть про / в конце
+sudo rsync -avz --numeric-ids --delete -e "ssh -i /home/valdemar/.ssh/rsyncb -p 11000" rsyncb@10.8.0.16:/mnt/data/shared/ /mnt/data/shared/ - не забыть про / в конце
 
