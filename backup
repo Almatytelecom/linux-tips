@@ -24,7 +24,7 @@ ssh-copy-id -p 11000 rsyncb@10.8.0.16
 редактируем файл /home/rsyncb/.ssh/authorized_keys
 no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-pty,no-user-rc ssh-ed25519 AAAA...
 usermod -s /usr/sbin/nologin rsyncb - в случае если сразу не прописали nologin
-usermod -aG storage rsyncb
+usermod -aG storage rsyncb - если не используем acl
 
 sudo apt install acl
 
