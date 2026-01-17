@@ -26,6 +26,19 @@ no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-pty,no-user-rc ssh-e
 usermod -s /usr/sbin/nologin rsyncb - в случае если сразу не прописали nologin
 usermod -aG storage rsyncb
 
+sudo apt install acl
+
+устанавливаем права rx на саму директорию (x чтобы rsync мог заходить внутрь): 
+sudo setfacl -m u:rsyncb:rx /mnt/data/shared
+
+устанавливаем rx как наследуемой на вновь создаваемые внутри 
+директории новые директории, при этом на файлы автоматом будет ставится r:
+sudo setfacl -d -m u:rsyncb:rx /mnt/data/shared
+
+Если внутри уже есть файлы и директории, то:
+sudo find /mnt/data/shared -type d -exec setfacl -m u:rsyncb:rx {} \; - на директории
+sudo find /mnt/data/shared -type f -exec setfacl -m u:rsyncb:r {} \; - на файлы
+
 на удаленной машине:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/rsyncb

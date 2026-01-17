@@ -1,0 +1,2 @@
+sudo adduser backup
+sudo chown -R root:backup
