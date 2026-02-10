@@ -1,0 +1,37 @@
+lsusb
+dmesg | grep tty
+sudo apt install usb-modeswitch
+sudo usb_modeswitch -v 0x12d1 -p 0x1001 -J
+sudo touch /etc/ppp/peers/gsm
+sudo nano /etc/ppp/peers/gsm
+
+sudo touch /etc/chatscripts/gsm
+sudo nano /etc/chatscripts/gsm
+sudo pon gsm
+sudo ip route add default dev ppp0
+sudo poff -a
+sudo nmcli -L  - проверить
+sudo nmcli -m 0
+sudo nmcli -m 0 > ~/home/valdemar/file
+sudo nmcli connection delete beeline 
+sudo nmcli connection add type gsm ifname "*" con-name beeline apn internet.beeline.kz
+sudo nmcli connection up beeline
+
+
+sudo apt install modemmanager
+nmcli device
+sudo nmcli connection add type gsm ifname ttyUSB2 con-name beeline apn internet.beeline.kz
+sudo nmcli connection up beeline 
+nmcli device
+sudo apt install speedtest-cli
+speedtest-cli --list | grep Kazakhstan
+speedtest-cli --server 70317
+
+sudo apt install minicom
+sudo minicom -D /dev/ttyUSB0
+sudo minicom -D /dev/ttyUSB1
+sudo minicom -D /dev/ttyUSB2
+
+
+
+
