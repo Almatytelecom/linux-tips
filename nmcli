@@ -1,0 +1,21 @@
+nmcli con show
+nmcli dev show 
+nmcli dev show | grep DNS
+sudo nmcli -L
+sudo nmcli conneciton delete beeline
+sudo nmcli connection add type gsm ifname "*" con-name beeline apn internet.beeline.kz
+sudo nmcli connection up beeline
+sudo nmcli show ttyUSB1
+sudo nmcli show ttyUSB0
+sudo nmcli connection add type ethernet con-name eth0-static ifname eth0 ipv4.addresses 192.168.10.1/24 ipv4.method manual
+sudo nmcli connection up eth0-static
+sudo nmcli connection add type ethernet con-name eth0-eshdi ifname eth0 ipv4.addresses 93.185.74.150
+sudo nmcli connection show
+nmcli -f NAME,DEVICE,TYPE connection show --active
+sudo nmcli connection modify eth0-eshdi ipv4.method manual ipv4.addresses 93.185.74.150 ipv4.never-default yes
+sudo nmcli connection modify eth0-eshdi ipv4.method manual ipv4.addresses 93.185.74.150 ipv4.never-default yes
+sudo nmcli connection modify eth0-eshdi ipv4.method manual ipv4.addresses 93.185.74.150 ipv4.never-default no
+sudo nmcli connection modify eth0-eshdi ipv4.route-metric 800
+sudo nmcli -f IP4,DNS,IP4,DOMAIN device show
+sudo nmcli connection modify eth0-eshdi ipv4.dns "217.195.23.100 217.195.27.2"
+
