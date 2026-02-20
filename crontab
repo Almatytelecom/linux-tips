@@ -1,4 +1,5 @@
 crontab -l or sudo crontab -l
+ssh-keygen -p -f /home/valdemar/.ssh/rsyncb - remove password
 sudo crontab -e
 0 3 * * * /usr/bin/rsync -avz --numeric-ids --delete -e "ssh -i /home/valdemar/.ssh/rsyncb -p 11000" rsyncb@192.168.100.61:/mnt/data/shared/ /mnt/data/shared/ >> /var/log/rsync-night.log 2>&1
 sudo tail -100 /var/log/rsync-night.log
