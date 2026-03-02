@@ -1,0 +1,79 @@
+/etc/logrotate.d/samba-audit
+/var/log/samba/audit.log {
+weekly
+missingok
+rotate 4
+compress
+notifempty
+}
+
+/etc/rsyslog.d/samba-audit.conf
+local7.notice /var/log/samba/audit.log
+& stop
+
+
+/etc/samba/smb.conf
+workgroup = WORKGROUP
+security = user
+ntlm auth = yes
+server min protocol = SMB2
+server max protocol = SMB3
+
+server string = %h server (Samba, Ubuntu)
+
+syslog:tag = samba-audit
+log level = 1 vfs:1
+
+max log size = 1000
+
+logging = file
+
+panic action = /usr/share/samba/panic-action %d
+
+server role = standalone server
+obey pam restrictions = yes
+
+unix password sync = yes
+
+passwd program = /usr/bin/passwd %u
+passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+
+pam password change = yes
+
+map to guest = never
+
+usershare allow guests = yes
+
+[printers]
+comment = All Printers
+browseable = no
+path = /var/tmp
+printable = yes
+guest ok = no
+read only = yes
+create mask = 0700
+
+[print$]
+comment = Printer Drivers
+path = /var/lib/samba/printers
+browseable = yes
+read only = yes
+guest ok = no
+
+[Shared]
+path = /mnt/data/shared
+browseable = yes
+writable = yes
+valid users = @stoarage
+create mask = 0660
+directory mask = 2770
+read only = no
+guest ok = no
+
+vfs objects = full_audit
+full_audit:prefix = %u|%I
+full_audit:success = mkdirat renameat unlinkat pwrite
+full_audit:failure = none
+full_audit:syslog = true
+full_audit:facility = LOCAL7
+full_audit:priority = NOTICE
