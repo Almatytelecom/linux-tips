@@ -49,4 +49,7 @@ sudo find /mnt/data/shared -type f -exec setfacl -m u:rsyncb:r {} \; - на фа
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/rsyncb
 sudo rsync -avz --numeric-ids --delete -e "ssh -i /home/valdemar/.ssh/rsyncb -p 11000" rsyncb@10.8.0.16:/mnt/data/shared/ /mnt/data/shared/ - не забыть про / в конце
-
+возможно все ломает следующая команда:
+sudo usermod -s /usr/sbin/nologin rsyncb
+поэтому нужно:
+sudo usermod -s /bin/bash rsyncb - чтоб все заработало
