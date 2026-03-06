@@ -19,7 +19,13 @@ sudo chown rsyncb:rsyncb /home/rsyncb/.ssh
 временно разрешаем доступ по паролю ssh в файле /etc/ssh/sshd_config
 создаем ключ на backup сервере для доступа на nas
 ssh-keygen -t rsa -b 4096  - имя rsyncb
+ssh-copy-id -p 11000 rsyncb@10.8.0.16 - но не даст сделать так как /usr/sbin/nologin сам пользователь rsyncb
+на машине откуда собираемся забирать данные поэтому делаем:
+sudo usermod -s /bin/bash rsyncb
+потом все таки делаем:
 ssh-copy-id -p 11000 rsyncb@10.8.0.16
+теперь отключаем login:
+sudo usermod -s /usr/sbin/nologin rsyncb
 отключаем временный доступ по паролю в /etc/ssh/sshd_config
 редактируем файл /home/rsyncb/.ssh/authorized_keys
 no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-pty,no-user-rc ssh-ed25519 AAAA...
@@ -31,9 +37,9 @@ sudo apt install acl
 устанавливаем права rx на саму директорию (x чтобы rsync мог заходить внутрь): 
 sudo setfacl -m u:rsyncb:rx /mnt/data/shared
 
-устанавливаем rx как наследуемой на вновь создаваемые внутри 
-директории новые директории, при этом на файлы автоматом будет ставится r:
-sudo setfacl -d -m u:rsyncb:rx /mnt/data/shared
+устанавливаем rx как наследуемой на вновь создаваемые внутри директории новые 
+директории, при этом на файлы автоматом будет ставится r: sudo setfacl -d -m 
+u:rsyncb:rx /mnt/data/shared
 
 Если внутри уже есть файлы и директории, то:
 sudo find /mnt/data/shared -type d -exec setfacl -m u:rsyncb:rx {} \; - на директории
